@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /admin/	
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/admin/$1 [R=301,L]

@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+RewriteRule ^([0-9a-zA-Z-_/]+)$ index.php?url=$1 [QSA]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# “ea-php71” paketini varsayılan “PHP” programlama dili olarak ayarlayın.
+<IfModule mime_module>
+  AddType application/x-httpd-ea-php70 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
